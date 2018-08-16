@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form Page</title>
+    <link rel="stylesheet" href="bootstrap-4.1.1/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">My Card</p>
+
+    <form class="" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+      <div class="form-group">
+      <label for="Name">Name:</label>
+      <input type="text" name="Name" placeholder="enter name">
+    </div>
+    <div class="form-group">
+      <label for="Email">Email:</label>
+      <input type="email" name="Email" placeholder="enter email">
+    </div>
+      <input type="submit" class="btn btn-primary" value="Submit">
+
+    </form>
+  </div>
+</div>
+</div>
+</div>
+<?php
+    $name=$email="";
+    if ($_SERVER["REQUEST_METHOD"]=="POST") {
+    $name=test_data($_POST["Name"]);
+    $email=test_data($_POST["Email"]);
+    }
+
+function test_data($data) {
+  $data=trim($data);
+  $data=stripslashes($data);
+  $data=htmlspecialchars($data);
+  return $data;
+}
+?>
+<h1>Name: <?php echo $name; ?></h1>
+<h1>Email: <?php echo $email; ?></h1>
+  </body>
+</html>

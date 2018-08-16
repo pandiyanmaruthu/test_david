@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <style>
+      #blocker {
+        position: fixed; /* Sit on top of the page content */
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+        z-index: 200; /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer;
+              text-align: center;
+        color: white;
+        vertical-align: middle;
+        transition: all 2s linear;
+    }
+
+    #blocker-text{
+              position: fixed;
+        top: 40%;
+        font-size: 45px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hidden{
+        display: none;
+    }
+    .show{
+        display: block;
+    }
+      </style><div id="blocker" class="hidden">
+      <div id="blocker-text">Please Wait...<br><img src="images/Loading_icon.gif" width=30px></div>
+    </div>
+    <h1>Test Home</h1>
+  </body>
+</html>
